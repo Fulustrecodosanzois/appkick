@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fulustrecofulus Live Viewer | Kick</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="https://kick.com/favicon.ico" type="image/x-icon">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="container mx-auto px-4 py-8">
+        <header class="mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
+            <div>
+                <h1 class="text-3xl font-bold text-green-400">Fulustrecofulus</h1>
+                <p class="text-gray-400">Painel de controle da live no Kick</p>
+            </div>
+            <div class="mt-4 md:mt-0">
+                <a href="https://kick.com/fulustrecofulus" target="_blank"
+                    class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20"
+                        fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Visitar Canal
+                </a>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Informações da Stream -->
+            <div class="bg-gray-800 p-4 rounded-lg col-span-1 lg:col-span-2">
+                <h2 class="text-xl font-bold mb-4 text-green-400">Informações da Live</h2>
+                <div id="streamInfo" class="space-y-2">
+                    <p class="text-gray-400">Carregando informações do canal...</p>
+                </div>
+            </div>
+
+            <!-- Visualizadores -->
+            <div class="bg-gray-800 p-4 rounded-lg">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-green-400">Espectadores</h2>
+                    <span id="viewerCount" class="bg-green-500 text-white px-2 py-1 rounded text-sm">...</span>
+                </div>
+                <div class="flex justify-between items-center mb-2 text-sm text-gray-400">
+                    <span>Nome</span>
+                    <span>Tempo na live</span>
+                </div>
+                <ul id="viewersList" class="space-y-2 max-h-96 overflow-y-auto">
+                    <li class="text-gray-400">Carregando espectadores...</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Chat da Live -->
+        <div class="mt-6 bg-gray-800 p-4 rounded-lg">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold text-green-400">Chat da Live</h2>
+                <button id="toggleChatBtn" class="bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded text-sm">
+                    Pausar
+                </button>
+            </div>
+            <div id="chatBox" class="bg-gray-900 p-4 rounded-lg h-96 overflow-y-auto mb-4">
+                <p class="text-gray-400">Carregando mensagens do chat...</p>
+            </div>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="mt-6 bg-gray-800 p-4 rounded-lg">
+            <h2 class="text-xl font-bold mb-4 text-green-400">Estatísticas da Live</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Pico de Espectadores</p>
+                    <p id="peakViewers" class="text-2xl font-bold">0</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Total de Mensagens</p>
+                    <p id="totalMessages" class="text-2xl font-bold">0</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Novos Seguidores</p>
+                    <p id="newFollowers" class="text-2xl font-bold">0</p>
+                </div>
+                <div class="bg-gray-900 p-4 rounded-lg">
+                    <p class="text-gray-400 text-sm">Tempo de Transmissão</p>
+                    <p id="streamTime" class="text-2xl font-bold">00:00:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
